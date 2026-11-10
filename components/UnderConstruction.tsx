@@ -55,8 +55,16 @@ export default function UnderConstruction({ onPreviewClick }: UnderConstructionP
 
         {/* 3. Offline Store & Hours Info - Pure Typography, No Box/Cards/Buttons */}
         <div className="w-full space-y-5 text-center">
+          {/* Hidden Semantic SEO Block */}
+          <div className="sr-only">
+            <h2>Warung Teh Hera (WTH) - Kuliner Cipanas Cianjur</h2>
+            <p>
+              Rumah makan dan street comfort food otentik di Cipanas, Cianjur. Menyajikan Nasi Bakar, Chicken Wings, Sate Taichan, Mix Suke, dan Teh Hera segar.
+            </p>
+          </div>
+
           {/* Address */}
-          <div className="space-y-1">
+          <address className="not-italic space-y-1">
             <p className="text-[11px] font-black tracking-widest text-[#D8E500] uppercase">
               Offline Store
             </p>
@@ -66,7 +74,7 @@ export default function UnderConstruction({ onPreviewClick }: UnderConstructionP
             <p className="text-xs text-white/80">
               Desa Palasari, Kec. Cipanas, Kabupaten Cianjur 43253
             </p>
-          </div>
+          </address>
 
           {/* Operating Hours */}
           <div className="space-y-1 pt-1">
