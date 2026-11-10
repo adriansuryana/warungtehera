@@ -19,7 +19,7 @@ export default function SuperAppBottomNav({
   ];
 
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-40 bg-[#D8E500] border-t-2 border-[#084C3F] px-2 py-1.5 shadow-[0_-4px_16px_rgba(8,76,63,0.15)] max-w-xl mx-auto">
+    <nav className="fixed bottom-0 inset-x-0 z-40 bg-[#084C3F]/95 backdrop-blur-md border-t-2 border-[#D8E500]/30 px-2 py-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] max-w-xl mx-auto">
       <div className="grid grid-cols-4 items-center">
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -30,13 +30,13 @@ export default function SuperAppBottomNav({
               onClick={() => onNavigate(tab.id)}
               className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all active:scale-90 ${
                 isActive
-                  ? "text-[#084C3F] font-black"
-                  : "text-[#084C3F]/60 font-semibold hover:text-[#084C3F]"
+                  ? "text-[#D8E500] font-black"
+                  : "text-white/60 font-semibold hover:text-white"
               }`}
             >
               <div
                 className={`p-1 rounded-lg transition-all ${
-                  isActive ? "bg-[#084C3F] text-[#D8E500]" : ""
+                  isActive ? "bg-[#D8E500] text-[#084C3F]" : ""
                 }`}
               >
                 <Icon className="w-4 h-4" />

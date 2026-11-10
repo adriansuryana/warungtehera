@@ -24,7 +24,7 @@ export default function InvestorVision() {
     {
       icon: Sparkles,
       title: "Distinct Streetwear Branding",
-      desc: "Identitas visual berani (Lime #D8E500 & Pine #084C3F) dengan maskot ramah berhijab, mudah viral dan menempel di benak Gen-Z & keluarga.",
+      desc: "Identitas visual berani (Pine #084C3F dengan aksen Lime #D8E500) dan maskot ramah berhijab, mudah viral dan menempel di benak Gen-Z & keluarga.",
     },
     {
       icon: Cpu,
@@ -34,8 +34,8 @@ export default function InvestorVision() {
   ];
 
   return (
-    <section id="investor-section" className="px-4 py-8 w-full">
-      <div className="relative overflow-hidden rounded-3xl bg-[#084C3F] text-white p-6 sm:p-8 border-2 border-[#D8E500] shadow-2xl">
+    <section id="investor-section" className="px-4 py-6 w-full">
+      <div className="relative overflow-hidden rounded-3xl bg-[#0C594A] text-white p-6 sm:p-8 border-2 border-[#D8E500]/50 shadow-2xl">
         {/* Glow ambient */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#D8E500]/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -51,7 +51,7 @@ export default function InvestorVision() {
           <span className="text-[#D8E500]">Come Great Things.</span>
         </h2>
 
-        <p className="mt-3 text-xs sm:text-sm text-[#D8E500]/90 leading-relaxed max-w-xl">
+        <p className="mt-3 text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl">
           Warung Teh Hera (WTH) lahir dari tekad menghadirkan sajian teh otentik dan makanan rumahan berkualitas premium dengan harga yang merangkul semua kalangan. Kami membangun fondasi operasional dan ekosistem digital yang siap diskalakan ke berbagai kota di Indonesia.
         </p>
 
@@ -62,7 +62,7 @@ export default function InvestorVision() {
             return (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-white/5 border border-[#D8E500]/25 hover:border-[#D8E500] transition-all"
+                className="p-4 rounded-2xl bg-[#084C3F] border border-[#D8E500]/25 hover:border-[#D8E500] transition-all"
               >
                 <div className="w-8 h-8 rounded-xl bg-[#D8E500] text-[#084C3F] flex items-center justify-center font-bold mb-2.5">
                   <Icon className="w-4 h-4" />

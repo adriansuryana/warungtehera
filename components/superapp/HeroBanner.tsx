@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, ExternalLink, Sparkles } from "lucide-react";
+import { MessageCircle, Sparkles } from "lucide-react";
 
 export default function HeroBanner() {
   const handleOpenWA = () => {
@@ -13,7 +13,7 @@ export default function HeroBanner() {
 
   return (
     <section className="px-4 py-3 w-full">
-      <div className="relative overflow-hidden rounded-3xl bg-[#084C3F] text-[#D8E500] border-2 border-[#084C3F] shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-[#0C594A] text-white border-2 border-[#D8E500]/40 shadow-xl">
         {/* Top Checkerboard Tape */}
         <div
           className="w-full h-4"
@@ -39,7 +39,7 @@ export default function HeroBanner() {
                 <span className="text-[#D8E500]">Warung Teh Hera!</span>
               </h2>
 
-              <p className="text-xs sm:text-sm text-[#D8E500]/85 font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-white/80 font-medium leading-relaxed">
                 Nasi Bakar wangi, Chicken Wings renyah gurih, Sate Taichan pedas segar, hingga Es Teh Melati pekat siap temani harimu!
               </p>
 
@@ -47,7 +47,7 @@ export default function HeroBanner() {
               <div className="pt-2 flex flex-wrap gap-2.5">
                 <button
                   onClick={handleOpenWA}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#D8E500] text-[#084C3F] font-black text-xs hover:brightness-105 active:scale-95 transition-all shadow-md"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] font-black text-xs active:scale-95 transition-all shadow-md"
                 >
                   <MessageCircle className="w-4 h-4 fill-[#084C3F]" />
                   <span>Pesan Sekarang (WA)</span>
@@ -55,7 +55,7 @@ export default function HeroBanner() {
 
                 <a
                   href="#menu-section"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#084C3F] text-[#D8E500] border border-[#D8E500]/40 font-bold text-xs hover:border-[#D8E500] active:scale-95 transition-all"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#084C3F] text-[#D8E500] border border-[#D8E500]/50 font-bold text-xs hover:border-[#D8E500] active:scale-95 transition-all"
                 >
                   <span>Lihat Semua Menu</span>
                 </a>
@@ -64,9 +64,9 @@ export default function HeroBanner() {
 
             {/* Right Mascot Visual */}
             <div className="sm:col-span-4 flex justify-center sm:justify-end">
-              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-[#D8E500] p-2 flex items-center justify-center shadow-lg border-2 border-[#D8E500]">
+              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-[#05332A] p-2 flex items-center justify-center shadow-lg border-2 border-[#D8E500]">
                 <Image
-                  src="/wth-logo-02.svg"
+                  src="/wth-logo-01.svg"
                   alt="Maskot WTH"
                   width={130}
                   height={130}
@@ -77,14 +77,14 @@ export default function HeroBanner() {
             </div>
           </div>
 
-          {/* Delivery Channels Badge (Sesuai Banner) */}
-          <div className="mt-5 pt-3 border-t border-[#D8E500]/20 flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#D8E500]/80">
+          {/* Delivery Channels Badge */}
+          <div className="mt-5 pt-3 border-t border-[#D8E500]/20 flex flex-wrap items-center justify-between gap-2 text-[11px] text-white/80">
             <span className="font-bold">Also Available On:</span>
             <div className="flex items-center gap-3 font-black text-[#D8E500]">
-              <span className="px-2.5 py-0.5 rounded-md bg-[#D8E500]/15 border border-[#D8E500]/30">
+              <span className="px-2.5 py-0.5 rounded-md bg-[#05332A] border border-[#D8E500]/40">
                 GoFood
               </span>
-              <span className="px-2.5 py-0.5 rounded-md bg-[#D8E500]/15 border border-[#D8E500]/30">
+              <span className="px-2.5 py-0.5 rounded-md bg-[#05332A] border border-[#D8E500]/40">
                 GrabFood
               </span>
             </div>

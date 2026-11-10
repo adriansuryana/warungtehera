@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MenuItem, CategoryTab } from "../../types/menu";
+import { MenuItem } from "../../types/menu";
 import { CATEGORIES, MENU_ITEMS } from "../../data/menuData";
-import { Plus, Minus, Flame, Utensils, Coffee, Sparkles } from "lucide-react";
+import { Plus, Minus, Flame } from "lucide-react";
 
 interface MenuCatalogProps {
   searchQuery: string;
@@ -30,15 +30,15 @@ export default function MenuCatalog({
   });
 
   return (
-    <section id="menu-section" className="px-4 py-4 w-full">
+    <section id="menu-section" className="px-4 py-5 w-full">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="text-lg sm:text-xl font-black text-[#084C3F] tracking-tight flex items-center gap-1.5">
+          <h3 className="text-lg sm:text-xl font-black text-white tracking-tight flex items-center gap-1.5">
             <span>Daftar Menu Favorit</span>
-            <Flame className="w-5 h-5 text-[#084C3F] fill-[#084C3F]" />
+            <Flame className="w-5 h-5 text-[#D8E500] fill-[#D8E500]" />
           </h3>
-          <p className="text-[11px] sm:text-xs text-[#084C3F]/75 font-medium">
+          <p className="text-[11px] sm:text-xs text-white/70 font-medium">
             Pilih menu kesukaanmu & pesan langsung via WhatsApp
           </p>
         </div>
@@ -54,8 +54,8 @@ export default function MenuCatalog({
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-black whitespace-nowrap transition-all flex items-center gap-1.5 active:scale-95 ${
                 isActive
-                  ? "bg-[#084C3F] text-[#D8E500] shadow-md"
-                  : "bg-[#084C3F]/10 text-[#084C3F] hover:bg-[#084C3F]/20"
+                  ? "bg-[#D8E500] text-[#084C3F] shadow-md"
+                  : "bg-[#0C594A] text-white/80 border border-[#D8E500]/25 hover:border-[#D8E500]"
               }`}
             >
               <span>{cat.label}</span>
@@ -71,37 +71,37 @@ export default function MenuCatalog({
           return (
             <div
               key={item.id}
-              className="p-4 rounded-2xl bg-white/70 backdrop-blur-sm border-2 border-[#084C3F]/20 hover:border-[#084C3F] shadow-sm flex flex-col justify-between transition-all"
+              className="p-4 rounded-2xl bg-[#0C594A] border-2 border-[#D8E500]/25 hover:border-[#D8E500] shadow-md flex flex-col justify-between transition-all"
             >
               <div>
                 {/* Tag & Category */}
                 <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="px-2 py-0.5 rounded-md bg-[#084C3F] text-[#D8E500] text-[10px] font-black uppercase tracking-wider">
+                  <span className="px-2 py-0.5 rounded-md bg-[#D8E500] text-[#084C3F] text-[10px] font-black uppercase tracking-wider">
                     {item.tag}
                   </span>
-                  <span className="text-[10px] font-bold text-[#084C3F]/60">
+                  <span className="text-[10px] font-bold text-white/60">
                     {item.categoryLabel}
                   </span>
                 </div>
 
                 {/* Name */}
-                <h4 className="text-base font-black text-[#084C3F] tracking-tight">
+                <h4 className="text-base font-black text-white tracking-tight">
                   {item.name}
                 </h4>
 
                 {/* Description */}
-                <p className="mt-1 text-xs text-[#084C3F]/80 leading-relaxed">
+                <p className="mt-1 text-xs text-white/80 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               {/* Price & Action Button */}
-              <div className="mt-4 pt-3 border-t border-[#084C3F]/15 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-[#D8E500]/20 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-[#084C3F]/60 block font-bold">
+                  <span className="text-[10px] text-white/60 block font-bold">
                     Harga per porsi
                   </span>
-                  <span className="text-lg font-black text-[#084C3F]">
+                  <span className="text-lg font-black text-[#D8E500]">
                     {item.priceDisplay}
                   </span>
                 </div>
@@ -110,20 +110,20 @@ export default function MenuCatalog({
                 {qty === 0 ? (
                   <button
                     onClick={() => onAddToCart(item)}
-                    className="flex items-center gap-1 px-3.5 py-1.5 rounded-xl bg-[#084C3F] text-[#D8E500] text-xs font-black hover:bg-[#0a5e4e] active:scale-95 transition-all shadow-sm"
+                    className="flex items-center gap-1 px-3.5 py-1.5 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] text-xs font-black active:scale-95 transition-all shadow-sm"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Tambah</span>
                   </button>
                 ) : (
-                  <div className="flex items-center gap-2 bg-[#084C3F] text-[#D8E500] px-2 py-1 rounded-xl shadow-sm">
+                  <div className="flex items-center gap-2 bg-[#05332A] border border-[#D8E500] text-[#D8E500] px-2 py-1 rounded-xl shadow-sm">
                     <button
                       onClick={() => onRemoveFromCart(item)}
                       className="p-1 hover:bg-white/10 rounded-md active:scale-90 transition-transform"
                     >
                       <Minus className="w-3.5 h-3.5" />
                     </button>
-                    <span className="font-mono font-black text-xs min-w-[16px] text-center">
+                    <span className="font-mono font-black text-xs min-w-[16px] text-center text-white">
                       {qty}
                     </span>
                     <button
@@ -140,7 +140,7 @@ export default function MenuCatalog({
         })}
 
         {filteredItems.length === 0 && (
-          <div className="col-span-full py-12 text-center text-[#084C3F]/70">
+          <div className="col-span-full py-12 text-center text-white/70">
             <p className="text-sm font-bold">Menu tidak ditemukan</p>
             <p className="text-xs mt-1">Coba cari dengan kata kunci lain yaa</p>
           </div>

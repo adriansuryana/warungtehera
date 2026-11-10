@@ -23,7 +23,7 @@ interface StoriesBarProps {
 
 export default function StoriesBar({ onSelectStory }: StoriesBarProps) {
   return (
-    <div className="w-full bg-[#D8E500] py-3 px-4 overflow-x-auto no-scrollbar border-b border-[#084C3F]/20">
+    <div className="w-full bg-[#084C3F] py-3 px-4 overflow-x-auto no-scrollbar border-b border-[#D8E500]/20">
       <div className="flex items-center gap-3 w-max">
         {STORIES.map((story) => (
           <button
@@ -35,15 +35,15 @@ export default function StoriesBar({ onSelectStory }: StoriesBarProps) {
             <div
               className={`w-14 h-14 rounded-full p-0.5 flex items-center justify-center transition-all ${
                 story.isPromo
-                  ? "bg-gradient-to-tr from-[#084C3F] to-white"
-                  : "border-2 border-[#084C3F] bg-[#D8E500]"
+                  ? "bg-gradient-to-tr from-[#D8E500] to-white"
+                  : "border-2 border-[#D8E500]/70 bg-[#05332A]"
               }`}
             >
-              <div className="w-full h-full rounded-full bg-[#084C3F] flex items-center justify-center text-xl shadow-inner group-hover:scale-105 transition-transform">
+              <div className="w-full h-full rounded-full bg-[#05332A] border border-[#D8E500]/40 flex items-center justify-center text-xl shadow-inner group-hover:scale-105 transition-transform">
                 <span>{story.emoji}</span>
               </div>
             </div>
-            <span className="text-[10px] font-black uppercase text-[#084C3F] max-w-[60px] truncate text-center">
+            <span className="text-[10px] font-black uppercase text-[#D8E500] max-w-[60px] truncate text-center">
               {story.title}
             </span>
           </button>

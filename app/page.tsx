@@ -80,9 +80,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#05332A] flex justify-center selection:bg-[#084C3F] selection:text-[#D8E500]">
-      {/* SuperApp Mobile Container Wrapper */}
-      <div className="w-full max-w-xl min-h-screen bg-[#D8E500] text-[#084C3F] flex flex-col relative shadow-2xl pb-24">
+    <div className="min-h-screen bg-[#05332A] flex justify-center selection:bg-[#D8E500] selection:text-[#084C3F]">
+      {/* SuperApp Mobile Container Wrapper - Deep Pine Green Background */}
+      <div className="w-full max-w-xl min-h-screen bg-[#084C3F] text-white flex flex-col relative shadow-2xl pb-24">
         {/* Top Checkerboard Tape */}
         <div
           className="w-full h-4 flex-shrink-0"
@@ -121,17 +121,17 @@ export default function Home() {
         <LocationReview />
 
         {/* Brand Footer Info */}
-        <footer className="px-4 py-8 text-center text-xs text-[#084C3F]/75 space-y-2 border-t-2 border-[#084C3F]/20 mt-4">
-          <p className="font-black text-sm uppercase tracking-wider text-[#084C3F]">
+        <footer className="px-4 py-8 text-center text-xs text-white/75 space-y-2 border-t-2 border-[#D8E500]/20 mt-4">
+          <p className="font-black text-sm uppercase tracking-wider text-[#D8E500]">
             WARUNG TEH HERA (WTH)
           </p>
-          <p className="font-semibold text-[11px]">
+          <p className="font-semibold text-[11px] text-white/90">
             From Small Beginnings Come Great Things.
           </p>
-          <p className="text-[10px] text-[#084C3F]/60">
+          <p className="text-[10px] text-white/60">
             Instagram: @warung_tehera • Website: warungtehera.my.id
           </p>
-          <p className="text-[10px] text-[#084C3F]/50 pt-2">
+          <p className="text-[10px] text-white/40 pt-2">
             © {new Date().getFullYear()} Warung Teh Hera. All rights reserved.
           </p>
 
