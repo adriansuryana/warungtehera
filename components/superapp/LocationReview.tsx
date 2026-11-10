@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin, Clock, Star, ExternalLink, Navigation } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function LocationReview() {
   const handleOpenMaps = () => {
@@ -20,7 +21,13 @@ export default function LocationReview() {
   return (
     <section id="location-section" className="px-4 py-5 w-full space-y-4">
       {/* Store Location Card */}
-      <div className="p-5 rounded-3xl bg-[#0C594A] border-2 border-[#D8E500]/30 text-white shadow-md">
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 0.5 }}
+        className="p-5 rounded-3xl bg-[#0C594A] border-2 border-[#D8E500]/30 text-white shadow-md"
+      >
         <div className="flex items-start justify-between gap-3 mb-3">
           <div>
             <span className="px-2.5 py-0.5 rounded-full bg-[#D8E500] text-[#084C3F] text-[10px] font-black uppercase tracking-wider inline-block mb-1">
@@ -44,17 +51,25 @@ export default function LocationReview() {
           <span>Buka Setiap Hari: 09.00 - 22.00 WIB</span>
         </div>
 
-        <button
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.96 }}
           onClick={handleOpenMaps}
-          className="w-full py-2.5 px-4 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] font-black text-xs active:scale-95 transition-all shadow-sm flex items-center justify-center gap-2"
+          className="w-full py-2.5 px-4 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] font-black text-xs shadow-sm flex items-center justify-center gap-2 cursor-pointer"
         >
           <Navigation className="w-4 h-4" />
           <span>Petunjuk Arah Google Maps</span>
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {/* Google Review Box */}
-      <div className="p-5 rounded-3xl bg-[#05332A] text-white border-2 border-[#D8E500]/40 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="p-5 rounded-3xl bg-[#05332A] text-white border-2 border-[#D8E500]/40 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
         <div>
           <div className="flex items-center gap-1.5 mb-1">
             {[...Array(5)].map((_, i) => (
@@ -70,14 +85,16 @@ export default function LocationReview() {
           </p>
         </div>
 
-        <button
+        <motion.button
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.95 }}
           onClick={handleOpenReview}
-          className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] font-black text-xs whitespace-nowrap active:scale-95 transition-all shadow-md flex items-center justify-center gap-1.5"
+          className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D8E500] hover:bg-[#ebf53d] text-[#084C3F] font-black text-xs whitespace-nowrap shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
         >
           <span>Rate Us on Google</span>
           <ExternalLink className="w-3.5 h-3.5" />
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </section>
   );
 }
