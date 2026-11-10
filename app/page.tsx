@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import WelcomeScreen from "../components/superapp/WelcomeScreen";
 import SuperAppHeader from "../components/superapp/SuperAppHeader";
-import StoriesBar from "../components/superapp/StoriesBar";
-import HeroBanner from "../components/superapp/HeroBanner";
-import MenuCatalog from "../components/superapp/MenuCatalog";
+import ModernAppDashboard from "../components/superapp/ModernAppDashboard";
+import FoodDetailModal from "../components/superapp/FoodDetailModal";
 import CartDrawer from "../components/superapp/CartDrawer";
 import InvestorVision from "../components/superapp/InvestorVision";
 import LocationReview from "../components/superapp/LocationReview";
@@ -15,27 +15,13 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState<Record<string, number>>({});
   const [activeSection, setActiveSection] = useState("home");
+  const [selectedFoodDetail, setSelectedFoodDetail] = useState<MenuItem | null>(null);
 
-  const handleAddToCart = (item: MenuItem) => {
+  const handleAddToCart = (item: MenuItem, qty = 1) => {
     setCart((prev) => ({
       ...prev,
-      [item.id]: (prev[item.id] || 0) + 1,
+      [item.id]: (prev[item.id] || 0) + qty,
     }));
-  };
-
-  const handleRemoveFromCart = (item: MenuItem) => {
-    setCart((prev) => {
-      const current = prev[item.id] || 0;
-      if (current <= 1) {
-        const copy = { ...prev };
-        delete copy[item.id];
-        return copy;
-      }
-      return {
-        ...prev,
-        [item.id]: current - 1,
-      };
-    });
   };
 
   const handleClearCart = () => {
@@ -58,12 +44,16 @@ export default function Home() {
     });
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToExplore = () => {
+    document.getElementById("app-dashboard")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (sectionId === "menu") {
-      document.getElementById("menu-section")?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById("app-dashboard")?.scrollIntoView({ behavior: "smooth" });
     } else if (sectionId === "investor") {
       document.getElementById("investor-section")?.scrollIntoView({ behavior: "smooth" });
     } else if (sectionId === "location") {
@@ -71,17 +61,9 @@ export default function Home() {
     }
   };
 
-  const handleSelectStory = (storyId: string) => {
-    if (storyId === "investor") {
-      scrollToSection("investor");
-    } else {
-      scrollToSection("menu");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#05332A] flex justify-center selection:bg-[#D8E500] selection:text-[#084C3F]">
-      {/* SuperApp Mobile Container Wrapper - Deep Pine Green Background */}
+      {/* SuperApp Mobile Container Wrapper */}
       <div className="w-full max-w-xl min-h-screen bg-[#084C3F] text-white flex flex-col relative shadow-2xl pb-24">
         {/* Top Checkerboard Tape */}
         <div
@@ -93,45 +75,45 @@ export default function Home() {
           }}
         />
 
-        {/* 1. SuperApp Header */}
-        <SuperAppHeader
+        {/* 1. Onboarding / Welcome Splash Hero (Layar Kiri Mockup Referensi) */}
+        <WelcomeScreen onExplore={scrollToExplore} />
+
+        {/* 2. SuperApp Header */}
+        <div id="app-dashboard" className="scroll-mt-4">
+          <SuperAppHeader
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            onLocationClick={() => handleNavigate("location")}
+          />
+        </div>
+
+        {/* 3. Modern App Dashboard with 2-Column Food Grid (Layar Tengah Mockup Referensi) */}
+        <ModernAppDashboard
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
-          onLocationClick={() => scrollToSection("location")}
-        />
-
-        {/* 2. Stories Highlights Bar */}
-        <StoriesBar onSelectStory={handleSelectStory} />
-
-        {/* 3. Hero Streetwear Banner */}
-        <HeroBanner />
-
-        {/* 4. Menu Catalog Section */}
-        <MenuCatalog
-          searchQuery={searchQuery}
           cart={cart}
-          onAddToCart={handleAddToCart}
-          onRemoveFromCart={handleRemoveFromCart}
+          onAddToCart={(item) => handleAddToCart(item, 1)}
+          onSelectItem={(item) => setSelectedFoodDetail(item)}
         />
 
-        {/* 5. Visi Misi & Investor Section */}
+        {/* 4. Brand Vision & Investor Deck (Professional & Concise) */}
         <InvestorVision />
 
-        {/* 6. Offline Store Location & Google Reviews */}
+        {/* 5. Offline Store Location & Google Reviews */}
         <LocationReview />
 
         {/* Brand Footer Info */}
-        <footer className="px-4 py-8 text-center text-xs text-white/75 space-y-2 border-t-2 border-[#D8E500]/20 mt-4">
+        <footer className="px-4 py-8 text-center text-xs text-white/70 space-y-2 border-t border-[#D8E500]/20 mt-4">
           <p className="font-black text-sm uppercase tracking-wider text-[#D8E500]">
             WARUNG TEH HERA (WTH)
           </p>
-          <p className="font-semibold text-[11px] text-white/90">
+          <p className="font-medium text-[11px] text-white/80">
             From Small Beginnings Come Great Things.
           </p>
-          <p className="text-[10px] text-white/60">
-            Instagram: @warung_tehera • Website: warungtehera.my.id
+          <p className="text-[10px] text-white/50">
+            Cipanas, Cianjur • Instagram: @warung_tehera • Website: warungtehera.my.id
           </p>
-          <p className="text-[10px] text-white/40 pt-2">
+          <p className="text-[10px] text-white/40 pt-1">
             © {new Date().getFullYear()} Warung Teh Hera. All rights reserved.
           </p>
 
@@ -146,7 +128,14 @@ export default function Home() {
           />
         </footer>
 
-        {/* Floating Cart Drawer */}
+        {/* Food Detail Modal Sheet (Layar Kanan Mockup Referensi) */}
+        <FoodDetailModal
+          item={selectedFoodDetail}
+          onClose={() => setSelectedFoodDetail(null)}
+          onAddToCart={handleAddToCart}
+        />
+
+        {/* Floating Cart Drawer Bar */}
         <CartDrawer
           cart={cart}
           onClearCart={handleClearCart}
@@ -156,7 +145,7 @@ export default function Home() {
         {/* Bottom SuperApp Navigation Bar */}
         <SuperAppBottomNav
           activeSection={activeSection}
-          onNavigate={scrollToSection}
+          onNavigate={handleNavigate}
         />
       </div>
     </div>
