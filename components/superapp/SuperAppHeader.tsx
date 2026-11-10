@@ -37,14 +37,13 @@ export default function SuperAppHeader({
 
       {/* Main Logo & Search Bar */}
       <div className="flex items-center gap-3">
-        {/* Mascot Avatar */}
-        <div className="w-10 h-10 rounded-xl bg-[#05332A] border-2 border-[#D8E500] p-1 flex items-center justify-center flex-shrink-0 shadow-inner">
+        {/* Mascot Vector - Clean without container box or border */}
+        <div className="w-10 h-10 relative flex-shrink-0 flex items-center justify-center">
           <Image
             src="/wth-logo-01.svg"
-            alt="WTH Maskot"
-            width={34}
-            height={34}
-            className="w-full h-full object-contain"
+            alt="WTH"
+            fill
+            className="object-contain"
           />
         </div>
 

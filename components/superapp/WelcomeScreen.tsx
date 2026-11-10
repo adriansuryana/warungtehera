@@ -11,25 +11,22 @@ interface WelcomeScreenProps {
 export default function WelcomeScreen({ onExplore }: WelcomeScreenProps) {
   return (
     <section className="relative w-full min-h-[92vh] sm:min-h-[85vh] flex flex-col justify-between items-center text-center px-6 py-8 bg-[#084C3F] text-white overflow-hidden rounded-b-3xl shadow-xl">
-      {/* Top Branding Badge */}
+      {/* Top Brand Logo - Clean Vector, No Circle Container, No Redundant Text */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-2 pt-2"
+        className="pt-2 flex justify-center"
       >
-        <div className="w-8 h-8 rounded-full bg-[#05332A] border border-[#D8E500] p-1 flex items-center justify-center shadow-md">
+        <div className="w-20 h-20 relative">
           <Image
             src="/wth-logo-01.svg"
-            alt="WTH Logo"
-            width={24}
-            height={24}
-            className="w-full h-full object-contain"
+            alt="WTH"
+            fill
+            className="object-contain drop-shadow-md"
+            priority
           />
         </div>
-        <span className="text-[11px] font-black uppercase tracking-widest text-[#D8E500]">
-          WARUNG TEH HERA
-        </span>
       </motion.div>
 
       {/* Center Floating Food Dish Visual */}
