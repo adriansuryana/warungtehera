@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const viewport: Viewport = {
-  themeColor: "#E58AF1",
+  themeColor: "#D8E500",
   width: "device-width",
   initialScale: 1,
 };
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   description:
     "Website Warung Teh Hera sedang dalam pengembangan. Kami sedang meracik pengalaman terbaik untukmu. Tunggu ya, Sahabat Teh Hera!",
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/wth-logo-02.svg",
+    shortcut: "/wth-logo-02.svg",
+    apple: "/wth-logo-02.svg",
   },
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className="min-h-screen bg-[#E58AF1] text-[#004B2C] selection:bg-[#004B2C] selection:text-[#E58AF1] antialiased overflow-hidden">
+      <body className="min-h-screen bg-[#D8E500] text-[#084C3F] selection:bg-[#084C3F] selection:text-[#D8E500] antialiased overflow-hidden">
         {children}
       </body>
     </html>
