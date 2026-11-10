@@ -10,8 +10,8 @@ interface UnderConstructionProps {
 
 export default function UnderConstruction({ onPreviewClick }: UnderConstructionProps) {
   const whatsappUrl =
-    "https://wa.me/6285183049514?text=Halo%20Warung%20Teh%20Hera,%20saya%20mau%20tanya%20menu%20dan%20order";
-  const mapsUrl = "https://maps.app.goo.gl/wJk4z64mD2mZ617r9";
+    "https://wa.me/6282130704794?text=Halo%20Warung%20Teh%20Hera,%20saya%20mau%20order";
+  const mapsUrl = "https://share.google/K7eRGvUQKXlRXPTGR";
   const instagramUrl = "https://instagram.com/warung_tehera";
 
   return (
@@ -89,25 +89,44 @@ export default function UnderConstruction({ onPreviewClick }: UnderConstructionP
             </p>
           </motion.div>
 
-          {/* Offline Store Information Card */}
+          {/* Offline Store Information Card (Sesuai Google Business Profile) */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full max-w-sm p-4 rounded-2xl bg-[#05332A]/80 border border-[#D8E500]/25 backdrop-blur-md text-left space-y-2 shadow-lg"
+            className="w-full max-w-sm p-4 rounded-2xl bg-[#05332A]/85 border border-[#D8E500]/30 backdrop-blur-md text-left space-y-2.5 shadow-lg"
           >
-            <div className="flex items-center gap-2 text-[#D8E500] font-black text-xs uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Offline Store Tetap Buka Setiap Hari!</span>
-            </div>
-            <div className="text-xs text-white/85 space-y-1">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D8E500] mt-0.5 flex-shrink-0" />
-                <span>Jl. Raya Cipanas, Cianjur, Jawa Barat</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1.5 text-[#D8E500] font-black text-xs uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Offline Store WTH</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-[#D8E500] flex-shrink-0" />
-                <span>10:00 - 22:00 WIB</span>
+              <span className="px-2 py-0.5 rounded-full bg-[#D8E500]/15 text-[#D8E500] text-[10px] font-bold border border-[#D8E500]/30">
+                ★ 5.0 Google Maps
+              </span>
+            </div>
+
+            {/* Address */}
+            <div className="flex items-start gap-2 text-xs text-white/90">
+              <MapPin className="w-3.5 h-3.5 text-[#D8E500] mt-0.5 flex-shrink-0" />
+              <span className="leading-snug">
+                Jln. Jeprah, Kp. Padarincang RT 004/004, Palasari, Kec. Cipanas, Kabupaten Cianjur 43253
+              </span>
+            </div>
+
+            {/* Operating Hours Table */}
+            <div className="pt-1 border-t border-[#D8E500]/15 space-y-1 text-[11px] text-white/80">
+              <div className="flex items-center gap-1.5 font-bold text-[#D8E500]">
+                <Clock className="w-3 h-3" />
+                <span>Jam Operasional:</span>
+              </div>
+              <div className="grid grid-cols-2 gap-x-2 gap-y-0.5 pl-4 text-[10.5px]">
+                <span className="text-white/70">Senin – Kamis:</span>
+                <span className="font-semibold text-white">08.00 – 16.00 WIB</span>
+                <span className="text-white/70">Jumat:</span>
+                <span className="font-bold text-red-400">Tutup (Libur)</span>
+                <span className="text-white/70">Sabtu – Minggu:</span>
+                <span className="font-semibold text-[#D8E500]">07.00 – 20.00 WIB</span>
               </div>
             </div>
           </motion.div>

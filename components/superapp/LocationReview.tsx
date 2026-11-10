@@ -4,18 +4,14 @@ import { MapPin, Clock, Star, ExternalLink, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function LocationReview() {
+  const gmapsLink = "https://share.google/K7eRGvUQKXlRXPTGR";
+
   const handleOpenMaps = () => {
-    const address = encodeURIComponent(
-      "Jln Jeprah, Kp Padarincang 004/004, Palasari, Kec. Cipanas, Kabupaten Cianjur, Jawa Barat 43253"
-    );
-    window.open(`https://maps.google.com/?q=${address}`, "_blank");
+    window.open(gmapsLink, "_blank");
   };
 
   const handleOpenReview = () => {
-    window.open(
-      "https://maps.google.com/?q=Warung+Teh+Hera+Cipanas",
-      "_blank"
-    );
+    window.open(gmapsLink, "_blank");
   };
 
   return (
@@ -46,9 +42,19 @@ export default function LocationReview() {
           Jln Jeprah, Kp Padarincang 004/004, Palasari, Kec. Cipanas, Kabupaten Cianjur, Jawa Barat 43253
         </p>
 
-        <div className="flex items-center gap-2 text-xs font-bold text-[#D8E500] mb-4 bg-[#084C3F] p-2.5 rounded-xl border border-[#D8E500]/25">
-          <Clock className="w-4 h-4 text-[#D8E500] flex-shrink-0" />
-          <span>Buka Setiap Hari: 09.00 - 22.00 WIB</span>
+        <div className="space-y-1.5 text-xs text-[#D8E500] mb-4 bg-[#084C3F] p-3 rounded-2xl border border-[#D8E500]/25">
+          <div className="flex items-center gap-1.5 font-bold">
+            <Clock className="w-3.5 h-3.5 text-[#D8E500] flex-shrink-0" />
+            <span>Jadwal Operasional:</span>
+          </div>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-0.5 pl-5 text-[11px] text-white/80">
+            <span className="text-white/60">Senin – Kamis:</span>
+            <span className="font-semibold text-white">08.00 – 16.00 WIB</span>
+            <span className="text-white/60">Jumat:</span>
+            <span className="font-bold text-red-400">Tutup (Libur)</span>
+            <span className="text-white/60">Sabtu – Minggu:</span>
+            <span className="font-semibold text-[#D8E500]">07.00 – 20.00 WIB</span>
+          </div>
         </div>
 
         <motion.button

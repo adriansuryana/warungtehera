@@ -8,7 +8,7 @@ export default function InvestorVision() {
     const text = encodeURIComponent(
       "Halo Founder Warung Teh Hera! Saya tertarik untuk berdiskusi mengenai kemitraan strategis & peluang ekspansi Warung Teh Hera. Boleh minta info kemitraannya? Terima kasih."
     );
-    window.open(`https://wa.me/6281234567890?text=${text}`, "_blank");
+    window.open(`https://wa.me/6282130704794?text=${text}`, "_blank");
   };
 
   const metrics = [

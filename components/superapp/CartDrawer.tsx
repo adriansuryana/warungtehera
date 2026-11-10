@@ -46,7 +46,7 @@ export default function CartDrawer({
       `Mohon info ketersediaan menu dan estimasi pengirimannya yaa kak, terima kasih! 😊`
     );
 
-    window.open(`https://wa.me/6281234567890?text=${text}`, "_blank");
+    window.open(`https://wa.me/6282130704794?text=${text}`, "_blank");
   };
 
   return (

@@ -31,7 +31,7 @@ export default function FoodDetailModal({
     const text = encodeURIComponent(
       `Halo Warung Teh Hera! 🍵\nSaya mau pesan langsung: ${quantity}x ${item.name} (${item.priceDisplay})\nTotal: Rp ${(item.price * quantity).toLocaleString("id-ID")}\nMohon info ketersediaannya yaa kak 😊`
     );
-    window.open(`https://wa.me/6281234567890?text=${text}`, "_blank");
+    window.open(`https://wa.me/6282130704794?text=${text}`, "_blank");
   };
 
   return (
