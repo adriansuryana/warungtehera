@@ -8,9 +8,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Warung Teh Hera | Website Sedang Dalam Pengembangan",
+  title: "Warung Teh Hera (WTH) | Street Comfort Food & Signature Tea",
   description:
-    "Website Warung Teh Hera sedang dalam pengembangan. Kami sedang meracik pengalaman terbaik untukmu. Tunggu ya, Sahabat Teh Hera!",
+    "Warung Teh Hera (WTH) - Dari Dapur Penuh Cinta. Nikmati Nasi Bakar, Chicken Wings, Sate Taichan, Mix Suke, dan Aneka Seduhan Teh Pilihan. Pesan online langsung via WhatsApp, GoFood, dan GrabFood.",
   icons: {
     icon: "/wth-logo-02.svg",
     shortcut: "/wth-logo-02.svg",
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body className="min-h-screen bg-[#D8E500] text-[#084C3F] selection:bg-[#084C3F] selection:text-[#D8E500] antialiased overflow-hidden">
+    <html lang="id" className="scroll-smooth">
+      <body className="min-h-screen bg-[#05332A] text-[#084C3F] selection:bg-[#084C3F] selection:text-[#D8E500] antialiased overflow-x-hidden">
         {children}
       </body>
     </html>
